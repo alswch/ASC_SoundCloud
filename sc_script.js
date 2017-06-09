@@ -55,7 +55,14 @@ var jukebox = {
       });
     });
   },
-
+// ======== STREAM TRACK =======
+playSelectedSong: function(trackId) {
+  console.log("==playSelectedSong==");
+  SC.stream("/tracks/" + trackId).then(function(player) {
+    self.player = player;
+    player.play();
+  });
+}
 }; //CLOSES JUKEBOX
 jukebox.initialize();
 }); //CLOSES JQUERY

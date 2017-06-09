@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="sc_styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <form class="" action="index.html" method="post">
+    Title: <input type="text" name="title" id="title">
+    Artist: <input type="text" name="artist" id="artist">
+    URL: <input type="text" name="url" id="url">
+    <input type="button" id="saveBtn" value="Save">
+  </form>
+
+  <input type="text" name="search" id="search" value="search" >
+  <div id="searchBtn">Search</div>
+
+  <h2>alswch's jukebox</h2>
+
+  <div id="jukebox">
+    <audio id="audioPlayer" src="" type="audio/mpeg">
+    </audio>
+
+
+<!-- ======= control buttons ======= -->
+    <div id="musiccontrol">
+
+      <div id="backBtn" class="buttons" type="back" name="back"></div>
+      <div id="playBtn" class="buttons" type="play" name="play"></div>
+      <div id="pauseBtn" class="buttons" type="pause" name="pause"></div>
+      <div id="nextBtn" class="buttons" type="next" name="next"></div>
+
+    </div>
+
+  </div>
+  <div id="library">
+    <ul id="songList"></ul>
+
+    <div id="selectedSong">
+      <p class="songInfo">&nbsp;</p>
+      <p class="songInfo">&nbsp;</p>
+      <p class="songInfo">&nbsp;</p>
+      <p class="songInfo">&nbsp;</p>
+    </div>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+  <script type="text/javascript" src="sc_script.js">
+
+  </script>
+</body>
+</html>

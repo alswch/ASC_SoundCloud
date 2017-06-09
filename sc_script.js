@@ -38,19 +38,24 @@ var jukebox = {
     var songName;
     for (var i = 0; i < songs.length; i++) {
       songName = songs[i].title;
-      $('#song_result').append('<li>'+songName+'</li>');
-    }
+      songID = songs[i].id;
+      $('#song_result').append("<li id='" + songID + "'>" + songName + "</li>");
+    };
   },
-  // =======
+  // ======= ACTIVATE SEARCH RESULTS =======
   activateListItems: function() {
     console.log("==activateListItems==");
     var self = this;
-    $('#song_result').children().each(function(){
-      console.log("==song_result==");
-    }).on('click', function(){
-      console.log('==click==');
-    })
-  }
+    $('#song_result').children('li').each(function(nextItem){
+      $(this).on('click', function(e){
+        console.log('==click==');
+        console.log(this.id);
+        console.log("this", this);
+        self.playSelectedSong(this.id);
+      });
+    });
+  },
+
 }; //CLOSES JUKEBOX
 jukebox.initialize();
 }); //CLOSES JQUERY

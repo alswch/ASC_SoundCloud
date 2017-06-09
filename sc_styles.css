@@ -21,10 +21,3 @@
 #nextBtn{
   background-image: url(images/nextbutton.png);
 }
-#searchBtn {
-  height: 30px;
-  width: 70px;
-  background-color: orange;
-  text-align: center;
-  line-height: 30px;
-}

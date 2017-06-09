@@ -38,9 +38,19 @@ var jukebox = {
     var songName;
     for (var i = 0; i < songs.length; i++) {
       songName = songs[i].title;
-      $('#trackList').append('<li>'+songName+'</li>');
+      $('#song_result').append('<li>'+songName+'</li>');
     }
+  },
+  // =======
+  activateListItems: function() {
+    console.log("==activateListItems==");
+    var self = this;
+    $('#song_result').children().each(function(){
+      console.log("==song_result==");
+    }).on('click', function(){
+      console.log('==click==');
+    })
   }
-};
+}; //CLOSES JUKEBOX
 jukebox.initialize();
-});
+}); //CLOSES JQUERY

@@ -92,7 +92,7 @@ var jukebox = {
     }
     var trackTags = $('#selectedTrack').children();
     trackTags[0].innerText = this.currentTrack.title;
-    trackTags[1].innerDisplay = this.currentTrack.artwork_url;
+    trackTags[1].innerText = this.currentTrack.artwork_url;
     trackTags[2].innerText = this.currentTrack.description;
     trackTags[3].innerText = this.currentTrack.user.username;
 

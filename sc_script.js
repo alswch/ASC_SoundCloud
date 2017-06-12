@@ -56,13 +56,27 @@ var jukebox = {
     });
   },
 // ======== STREAM TRACK =======
-playSelectedSong: function(trackId) {
-  console.log("==playSelectedSong==");
-  SC.stream("/tracks/" + trackId).then(function(player) {
-    self.player = player;
-    player.play();
-  });
-}
+  playSelectedSong: function(trackId) {
+    console.log("==playSelectedSong==");
+    SC.stream("/tracks/" + trackId).then(function(player) {
+      self.player = player;
+      player.play();
+    });
+    jukebox.activateAudioButtons();
+  },
+// ======= AUDIO BUTTONS ========
+  activateAudioButtons: function(){
+      console.log("== activateAudioButtons ==");
+      var audioPlayer = $('#audioPlayer');
+      $('#playBtn').on('click', function(event){
+          console.log('-- playBtn --');
+          player.play();
+      });
+      $('#pauseBtn').on('click', function(event){
+          console.log('-- pauseBtn --');
+          player.pause();
+      });
+  }
 }; //CLOSES JUKEBOX
 jukebox.initialize();
 }); //CLOSES JQUERY

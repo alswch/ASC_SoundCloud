@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 var jukebox = {
   musicLibrary: [],
+  currentTrack: null,
 
   initialize: function() {
     SC.initialize({
@@ -52,14 +53,16 @@ var jukebox = {
         console.log(this.id);
         console.log("this", this);
         self.playSelectedSong(this.id);
+        self.currentTrackInfo(this.id);
       });
     });
   },
 // ======== STREAM TRACK =======
   playSelectedSong: function(trackId) {
-    console.log("==playSelectedSong==");
+    // console.log("==playSelectedSong==");
     SC.stream("/tracks/" + trackId).then(function(player) {
       self.player = player;
+      console.log("player:", player);
       player.play();
     });
     jukebox.activateAudioButtons();
@@ -76,7 +79,27 @@ var jukebox = {
           console.log('-- pauseBtn --');
           player.pause();
       });
+  },
+  // ====== CURRENT TRACK INFO ======
+  currentTrackInfo: function(trackId) {
+    console.log("==currentTrackInfo==", trackId);
+    for (var i = 0; i < this.musicLibrary.length; i++) {
+      var nextTrackInfo = this.musicLibrary[i]
+      if (trackId == nextTrackInfo.id) {
+        this.currentTrack = nextTrackInfo;
+        break;
+      }
+    }
+    var trackTags = $('#selectedTrack').children();
+    trackTags[0].innerText = this.currentTrack.title;
+    trackTags[1].innerDisplay = this.currentTrack.artwork_url;
+    trackTags[2].innerText = this.currentTrack.description;
+    trackTags[3].innerText = this.currentTrack.user.username;
+
   }
+
+
+
 }; //CLOSES JUKEBOX
 jukebox.initialize();
 }); //CLOSES JQUERY

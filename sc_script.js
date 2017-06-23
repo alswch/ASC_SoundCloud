@@ -90,6 +90,9 @@ var jukebox = {
         break;
       }
     }
+    var trackArtwork = document.getElementById("artwork");
+    console.log(trackArtwork);
+    trackArtwork.src = this.currentTrack.artwork_url;
     var trackTags = $('#selectedTrack').children();
     trackTags[0].innerText = this.currentTrack.title;
     trackTags[1].innerText = this.currentTrack.artwork_url;

@@ -5,19 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="sc_styles.css">
-  <title>Soundcloud</title>
+  <title>Document</title>
 </head>
 <body>
-
-  <form class="" action="index.html" method="post">
+  <!-- <form class="" action="index.html" method="post">
+    Title: <input type="text" name="title" id="title">
+    Artist: <input type="text" name="artist" id="artist">
+    URL: <input type="text" name="url" id="url">
+    <input type="button" id="saveBtn" value="Save">
+  </form> -->
 
   <input type="text" name="search" id="search" placeholder="search here" >
   <input type="button" id="searchBtn" value="search">
-</form>
 
+  <!-- <h2>alswch's jukebox</h2> -->
 
-<!-- ======= control buttons ======= -->
+    <audio id="audioPlayer" src="" type="audio/mpeg"></audio>
 
+    <input type="button" id="playBtn" value="Play">
+    <input type="button" id="pauseBtn" value="Pause">
+
+  <div id="artwork" src=""></div>
 
   <div id="library">
     <ul id="song_result"></ul>
@@ -29,11 +37,10 @@
       <p class="trackInfo">&nbsp;</p>
     </div>
 
+
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
-  <script type="text/javascript" src="sc_script.js">
-
-  </script>
+  <script type="text/javascript" src="sc_script.js"></script>
 </body>
 </html>
